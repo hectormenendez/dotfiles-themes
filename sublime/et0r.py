@@ -1,7 +1,53 @@
-#import sublime
+import sublime
 import sublime_plugin
 import datetime
 import re
+
+TRAILING_WHITESPACE_ENABLED = True
+
+
+def refresh(view):
+    if not TRAILING_WHITESPACE_ENABLED:
+        return
+    view.erase_regions('trailing-whitespace')
+    view.add_regions(
+        'trailing-whitespace',
+        view.find_all(r"[\ \t]+$"),
+        'invalid',
+        sublime.DRAW_EMPTY_AS_OVERWRITE | sublime.DRAW_OUTLINED
+    )
+
+
+class TrailingWhitespaceTextCommand(sublime_plugin.TextCommand):
+    """
+    Strip whitespace from the end of each line in the file.
+    """
+    def run(self, edit):
+        trailing_white_space = self.view.find_all("[\t ]+$")
+        trailing_white_space.reverse()
+        for r in trailing_white_space:
+            self.view.erase(edit, r)
+
+
+class TrailingWhitespaceWindowCommand(sublime_plugin.WindowCommand):
+    def run(self):
+        global TRAILING_WHITESPACE_ENABLED
+        TRAILING_WHITESPACE_ENABLED = not TRAILING_WHITESPACE_ENABLED
+        view = self.window.active_view()
+        if view:
+                view.erase_regions('trailing-whitespace')
+                refresh(view)
+
+
+class TrailingWhitespaceEventListener(sublime_plugin.EventListener):
+    def on_load(self, view):
+        refresh(view)
+
+    def on_modified(self, view):
+        refresh(view)
+
+    def on_activated(self, view):
+        refresh(view)
 
 
 class etor_timestampCommand(sublime_plugin.TextCommand):
