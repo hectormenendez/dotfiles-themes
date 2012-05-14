@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"reg",
+				"regions"
+			],
+			[
 				"path_",
 				"path_super"
 			],
@@ -580,8 +584,8 @@
 	},
 	"file_history":
 	[
-		"/Users/et0r/Library/Application Support/Sublime Text 2/Packages/User/Default (OSX).sublime-keymap",
 		"/Users/et0r/Source/sublime-stuff/et0r.py",
+		"/Users/et0r/Library/Application Support/Sublime Text 2/Packages/User/Default (OSX).sublime-keymap",
 		"/Users/et0r/Source/sublime-stuff/et0r.tmTheme.chback",
 		"/Users/et0r/Source/sublime-stuff/et0r.sublime-project",
 		"/Users/et0r/Library/Application Support/Sublime Text 2/Packages/User/Preferences.sublime-settings",

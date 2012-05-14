@@ -44,7 +44,9 @@ class Et0rWhitespaceStripCommand(sublime_plugin.TextCommand):
     Strip whitespace from the end of each line in the file.
     """
     def run(self, edit):
-        for region in self.view.find_all("[\t ]+$").reverse():
+        regions = self.view.find_all("[\t ]+$")
+        regions.reverse()
+        for region in regions:
             self.view.erase(edit, region)
 
 
