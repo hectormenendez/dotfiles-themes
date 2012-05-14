@@ -1,7 +1,8 @@
-import sublime
+#import sublime
 import sublime_plugin
 import datetime
 import re
+
 
 class etor_timestampCommand(sublime_plugin.TextCommand):
     """
