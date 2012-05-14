@@ -487,19 +487,11 @@
 	},
 	"buffers":
 	[
-		{
-			"contents": "",
-			"settings":
-			{
-				"buffer_size": 0,
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "Ti.iPhone",
 	"command_palette":
 	{
-		"height": 50.0,
+		"height": 375.0,
 		"selected_items":
 		[
 			[
@@ -571,7 +563,7 @@
 				"Markdown Preview: current file in Sublime Text"
 			]
 		],
-		"width": 484.0
+		"width": 579.0
 	},
 	"console":
 	{
@@ -588,15 +580,17 @@
 	},
 	"file_history":
 	[
-		"/Users/et0r/Source/sublime-stuff/dostres.tmTheme",
 		"/Users/et0r/Library/Application Support/Sublime Text 2/Packages/User/Default (OSX).sublime-keymap",
-		"/Users/et0r/Source/sublime-stuff/et0r.sublime-keymap",
 		"/Users/et0r/Source/sublime-stuff/et0r.py",
-		"/Users/et0r/Source/sublime-stuff/show-whitespace.py",
+		"/Users/et0r/Source/sublime-stuff/et0r.tmTheme.chback",
+		"/Users/et0r/Source/sublime-stuff/et0r.sublime-project",
+		"/Users/et0r/Library/Application Support/Sublime Text 2/Packages/User/Preferences.sublime-settings",
 		"/Users/et0r/Source/sublime-stuff/strip-whitespace.py",
+		"/Users/et0r/Source/sublime-stuff/show-whitespace.py",
+		"/Users/et0r/Source/sublime-stuff/dostres.tmTheme",
+		"/Users/et0r/Source/sublime-stuff/et0r.sublime-keymap",
 		"/Users/et0r/Source/sublime-stuff/titanium.sublime-build",
 		"/Users/et0r/Library/Application Support/Sublime Text 2/Packages/SublimeLinter/SublimeLinter.sublime-settings",
-		"/Users/et0r/Library/Application Support/Sublime Text 2/Packages/User/Preferences.sublime-settings",
 		"/Users/et0r/Source/titanium/yappManage/Resources/app/main/control.coffee",
 		"/Users/et0r/Source/titanium/yappManage/Resources/app/main/control.js",
 		"/Users/et0r/Source/titanium/yappManage/Resources/sys/model.js",
@@ -713,9 +707,7 @@
 		"/Users/et0r/Source/nodejs/hellochat/app.js",
 		"/Users/et0r/Source/nodejs/hellochat/routes/index.js",
 		"/Users/et0r/Source/nodejs/hellochat/socket/connection.js",
-		"/Users/et0r/Source/nodejs/hellochat/views/layout.jade",
-		"/Users/et0r/Source/nodejs/hellochat/public/stylesheets/style.css",
-		"/Users/et0r/Source/nodejs/hellochat/node_modules/express/lib/router/route.js"
+		"/Users/et0r/Source/nodejs/hellochat/views/layout.jade"
 	],
 	"find":
 	{
@@ -969,32 +961,6 @@
 		{
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"settings":
-					{
-						"buffer_size": 0,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"auto_name": "",
-							"syntax": "Packages/Text/Plain text.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				}
 			]
 		}
 	],

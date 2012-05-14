@@ -6,7 +6,7 @@ import re
 TRAILING_WHITESPACE_ENABLED = True
 
 
-def refresh(view):
+def Et0rWhitespaceRefresh(view):
     if not TRAILING_WHITESPACE_ENABLED:
         return
     view.erase_regions('trailing-whitespace')
@@ -18,39 +18,37 @@ def refresh(view):
     )
 
 
-class TrailingWhitespaceTextCommand(sublime_plugin.TextCommand):
-    """
-    Strip whitespace from the end of each line in the file.
-    """
-    def run(self, edit):
-        trailing_white_space = self.view.find_all("[\t ]+$")
-        trailing_white_space.reverse()
-        for r in trailing_white_space:
-            self.view.erase(edit, r)
-
-
-class TrailingWhitespaceWindowCommand(sublime_plugin.WindowCommand):
+class Et0rWhitespaceShowCommand(sublime_plugin.WindowCommand):
     def run(self):
         global TRAILING_WHITESPACE_ENABLED
         TRAILING_WHITESPACE_ENABLED = not TRAILING_WHITESPACE_ENABLED
         view = self.window.active_view()
         if view:
-                view.erase_regions('trailing-whitespace')
-                refresh(view)
+            view.erase_regions('trailing-whitespace')
+            Et0rWhitespaceRefresh(view)
 
 
-class TrailingWhitespaceEventListener(sublime_plugin.EventListener):
+class Et0rWhitespaceEvent(sublime_plugin.EventListener):
     def on_load(self, view):
-        refresh(view)
+        Et0rWhitespaceRefresh(view)
 
     def on_modified(self, view):
-        refresh(view)
+        Et0rWhitespaceRefresh(view)
 
     def on_activated(self, view):
-        refresh(view)
+        Et0rWhitespaceRefresh(view)
 
 
-class etor_timestampCommand(sublime_plugin.TextCommand):
+class Et0rWhitespaceStripCommand(sublime_plugin.TextCommand):
+    """
+    Strip whitespace from the end of each line in the file.
+    """
+    def run(self, edit):
+        for region in self.view.find_all("[\t ]+$").reverse():
+            self.view.erase(edit, region)
+
+
+class Et0rTimestampCommand(sublime_plugin.TextCommand):
     """
     Inserts Timestamp in selected region.
     @working 2011/SEP/01 02:53
@@ -65,7 +63,7 @@ class etor_timestampCommand(sublime_plugin.TextCommand):
             self.view.insert(edit, region.begin(), time)
 
 
-class etor_createdCommand(sublime_plugin.TextCommand):
+class Et0rCommentCommand(sublime_plugin.TextCommand):
     """
     Inserts a created timestamp with author in selected region.
     @working 2011/SEP/01 02:48
@@ -82,8 +80,7 @@ class etor_createdCommand(sublime_plugin.TextCommand):
             # construct string
             comment = (
             "/**\n"
-            "%(wp)s * @author Hector Menendez <h@cun.mx>\n"
-            "%(wp)s * @licence http://etor.mx/licence.txt\n"
+            "%(wp)s * @author Hector Menendez <etor@gik.mx>\n"
             "%(wp)s * @created %(time)s\n"
             "%(wp)s */") % {'time': time, 'wp': wp}
             #if there's a selection, replace it.
