@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>fileTypes</key>
+    <array>
+        <string>tumblr</string>
+    </array>
+
+    <key>name</key>
+    <string>Tumblr</string>
+
+    <key>scopeName</key>
+    <string>text.html.tumblr</string>
+
+    <key>uuid</key>
+    <string>DC474EDA-419E-4B59-B7E6-9C537B18B9EF</string>
+
+    <!-- PATTERNS INI -->
+    <key>patterns</key>
+    <array>
+
+        <dict>
+            <key>name</key>
+            <string>tumblr.embed</string>
+
+            <key>patterns</key>
+            <array>
+                <dict>
+                    <key>include</key>
+                    <string>#tumblr-embed-script</string>
+                </dict>
+                <dict>
+                    <key>include</key>
+                    <string>#tumblr-embed-style</string>
+                </dict>
+            </array>
+        </dict>
+
+        <dict>
+            <key>name</key>
+            <string>text.html.tumblr</string>
+            <key>patterns</key>
+            <array>
+                <dict>
+                    <key>include</key>
+                    <string>#tumblr</string>
+                </dict>
+                <dict>
+                    <key>include</key>
+                    <string>text.html.basic</string>
+                </dict>
+            </array>
+        </dict>
+
+    </array>
+
+    <key>repository</key>
+    <dict>
+
+        <!--
+            Matches {\1:\2}
+        !-->
+        <key>tumblr</key>
+        <dict>
+            <key>name</key>
+            <string>text.html.tumblr</string>
+
+            <key>begin</key>
+            <string>({)([^\s}:]+)(?:(:)([^\s}]+))?</string>
+
+            <key>end</key>
+            <string>(})</string>
+
+            <key>captures</key>
+            <dict>
+                <key>1</key>
+                <dict>
+                    <key>name</key>
+                    <string>tumblr.caret</string>
+                </dict>
+                <key>2</key>
+                <dict>
+                    <key>name</key>
+                    <string>tumblr.verb</string>
+                </dict>
+                <key>3</key>
+                <dict>
+                    <key>name</key>
+                    <string>tumblr.caret</string>
+                </dict>
+                <key>4</key>
+                <dict>
+                    <key>name</key>
+                    <string>tumblr.adjective</string>
+                </dict>
+            </dict>
+
+            <key>patterns</key>
+            <array>
+                <dict>
+                    <key>match</key>
+                    <string>{[^}]+}</string>
+                </dict>
+            </array>
+        </dict>
+        <!-- end tumblr -->
+
+        <!--
+            Captures <script … </script>
+        -->
+        <key>tumblr-embed-script</key>
+        <dict>
+            <key>name</key>
+            <string>tumblr.embed.script</string>
+
+            <key>begin</key>
+            <string>(&lt;script)</string>
+
+            <key>end</key>
+            <string>(&lt;/script&gt;)</string>
+
+            <key>captures</key>
+            <dict>
+                <key>1</key>
+                <dict>
+                    <key>name</key>
+                    <string>entity.name.tag.script.html</string>
+                </dict>
+            </dict>
+
+            <key>patterns</key>
+            <array>
+
+                <dict>
+                    <key>include</key>
+                    <string>#tumblr-script</string>
+                </dict>
+
+                <dict>
+                    <key>include</key>
+                    <string>#tumblr</string>
+                </dict>
+
+                <dict>
+                    <key>include</key>
+                    <string>source.js</string>
+                </dict>
+            </array>
+        </dict>
+
+        <!--
+            Captures <style … </style>
+        -->
+        <key>tumblr-embed-style</key>
+        <dict>
+            <key>name</key>
+            <string>tumblr.embed.style</string>
+
+            <key>begin</key>
+            <string>(&lt;style)</string>
+
+            <key>end</key>
+            <string>(&lt;/style&gt;)</string>
+
+            <key>captures</key>
+            <dict>
+                <key>1</key>
+                <dict>
+                    <key>name</key>
+                    <string>entity.name.tag.script.html</string>
+                </dict>
+            </dict>
+
+            <key>patterns</key>
+            <array>
+
+                <dict>
+                    <key>include</key>
+                    <string>#tumblr-script</string>
+                </dict>
+
+                <dict>
+                    <key>include</key>
+                    <string>#tumblr</string>
+                </dict>
+
+                <dict>
+                    <key>include</key>
+                    <string>source.css</string>
+                </dict>
+            </array>
+        </dict>
+
+
+        <key>tumblr-script</key>
+        <dict>
+            <key>name</key>
+            <string>tumblr.script</string>
+
+            <key>patterns</key>
+            <array>
+                <!--
+                    Matches script tag attributes and their corresponding value
+                !-->
+                <dict>
+                    <key>name</key>
+                    <string>entity.name.tag.script.html</string>
+
+                    <key>match</key>
+                    <string>(?i:([a-z]+))\s*=\s*(["'][^"']+["'])(?=[^&gt;]*&gt;$)</string>
+
+                    <key>captures</key>
+                    <dict>
+                        <key>1</key>
+                        <dict>
+                            <key>name</key>
+                            <string>entity.other.attribute-name.html</string>
+                        </dict>
+                        <key>2</key>
+                        <dict>
+                            <key>name</key>
+                            <string>string.quoted.any.html</string>
+                        </dict>
+                    </dict>
+                </dict>
+
+                <!--
+                    Matches script tag ending greater-than symbol
+                !-->
+                <dict>
+                    <key>name</key>
+                    <string>entity.name.tag.script.html</string>
+                    <key>match</key>
+                    <string>(?&lt;!&lt;/(?:script))(&gt;)</string>
+                </dict>
+            </array>
+        </dict>
+
+    </dict>
+
+</dict>
+</plist>
