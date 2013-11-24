@@ -3,52 +3,6 @@ import sublime_plugin
 import datetime
 import re
 
-TRAILING_WHITESPACE_ENABLED = True
-
-
-def Et0rWhitespaceRefresh(view):
-    if not TRAILING_WHITESPACE_ENABLED:
-        return
-    view.erase_regions('trailing-whitespace')
-    view.add_regions(
-        'trailing-whitespace',
-        view.find_all(r"[\ \t]+$"),
-        'invalid',
-        sublime.DRAW_EMPTY_AS_OVERWRITE | sublime.DRAW_OUTLINED
-    )
-
-
-class Et0rWhitespaceShowCommand(sublime_plugin.WindowCommand):
-    def run(self):
-        global TRAILING_WHITESPACE_ENABLED
-        TRAILING_WHITESPACE_ENABLED = not TRAILING_WHITESPACE_ENABLED
-        view = self.window.active_view()
-        if view:
-            view.erase_regions('trailing-whitespace')
-            Et0rWhitespaceRefresh(view)
-
-
-class Et0rWhitespaceEvent(sublime_plugin.EventListener):
-    def on_load(self, view):
-        Et0rWhitespaceRefresh(view)
-
-    def on_modified(self, view):
-        Et0rWhitespaceRefresh(view)
-
-    def on_activated(self, view):
-        Et0rWhitespaceRefresh(view)
-
-
-class Et0rWhitespaceStripCommand(sublime_plugin.TextCommand):
-    """
-    Strip whitespace from the end of each line in the file.
-    """
-    def run(self, edit):
-        regions = self.view.find_all("[\t ]+$")
-        regions.reverse()
-        for region in regions:
-            self.view.erase(edit, region)
-
 
 class Et0rTimestampCommand(sublime_plugin.TextCommand):
     """
