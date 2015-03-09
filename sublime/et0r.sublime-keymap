@@ -1,5 +1,0 @@
-[
-    { "keys": ["ctrl+super+w"], "command": "et0r_whitespace_strip" },
-    { "keys": ["ctrl+super+c"], "command": "et0r_comment" },
-    { "keys": ["ctrl+super+t"], "command": "et0r_timestamp" }
-]
