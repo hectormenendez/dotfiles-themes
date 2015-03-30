@@ -35,7 +35,7 @@ Gulp.task('lint-self', ()=>
 		.pipe(GulpLint.failOnError())
 );
 
-Gulp.task('default', ['lint-self', 'clean'], ()=> Gulp.src(Path.join(Dir.src, '**/*'))
+Gulp.task('build', ['lint-self', 'clean'], ()=> Gulp.src(Path.join(Dir.src, '**/*'))
 	.pipe(Through.obj(function(file, encoding, cback){
 		if (!file.isBuffer()) return cback(null, file);
 		var type = Path.extname(file.path).slice(1);

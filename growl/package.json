@@ -10,17 +10,17 @@
     "test"  : "echo 'no tests defined'; exit 1",
     "build" : "gulp build"
   },
-  "dependencies"    : {}
+  "dependencies"    : {},
   "devDependencies" : {
     "accord"       : "^0.16.0",
     "babel"        : "^4.7.x",
-    "babel-eslint" : "^2.0.x",
     "del"          : "^1.1.x",
     "gulp"         : "^3.8.x",
+    "gulp-eslint"  : "^0.7.x",
     "jade"         : "^1.9.2",
     "lodash"       : "^3.6.0",
     "slugify"      : "^0.1.1",
     "stylus"       : "^0.50.0",
     "through2"     : "^0.6.3"
-  },
+  }
 }
