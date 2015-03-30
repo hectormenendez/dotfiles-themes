@@ -10,8 +10,14 @@ const Accord   = require('accord');
 const Gulp     = require('gulp');
 const GulpLint = require('gulp-eslint');
 
-const Package = require('../package.json');
-const Action  = { styl:Accord.load('stylus'), jade:Accord.load('jade') };
+const Package       = require('../package.json');
+const Action        = { styl:Accord.load('stylus'), jade:Accord.load('jade') };
+const {XmlEntities} = require('html-entities');
+
+for (let key in Package){
+	if (typeof Package[key] !== 'string') delete Package[key];
+	else Package[key] = (new XmlEntities()).encode(Package[key]);
+}
 
 const Dir = {};
 Dir.root  = Path.resolve(Path.join(__dirname, '..'));
@@ -39,7 +45,10 @@ Gulp.task('build', ['lint-self', 'clean'], ()=> Gulp.src(Path.join(Dir.src, '**/
 	.pipe(Through.obj(function(file, encoding, cback){
 		if (!file.isBuffer()) return cback(null, file);
 		var type = Path.extname(file.path).slice(1);
-		Action[type].render(Lodash.template(file.contents.toString(encoding))(Package))
+		Action[type].render(
+			Lodash.template(file.contents.toString(encoding))(Package),
+			{ pretty:true }
+		)
 		.then(function(res){
 			file.contents = new Buffer(res.result);
 			file.path = Route[file.path];
