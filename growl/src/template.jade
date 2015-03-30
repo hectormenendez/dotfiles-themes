@@ -1,0 +1,20 @@
+doctype html
+
+html
+
+	head
+		base(href='%baseurl%')
+		style(type='text/css').
+			@import URL('template.css');
+
+	body(style='opacity:%opacity%;')
+
+		#container.notification(class='%priority%')
+
+			aside
+				img.icon(src='growlimage://%image%')
+
+			article
+				div
+					h1 %title%
+					p %text%

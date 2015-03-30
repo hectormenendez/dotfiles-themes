@@ -1,0 +1,19 @@
+{
+	"folders":
+	[
+		{
+			"file_exclude_patterns":
+			[
+				"growl.sublime-project",
+				"gulpfile.js",
+				".eslintrc"
+			],
+			"folder_exclude_patterns":
+			[
+				"node_modules",
+				"*.growlStyle"
+			],
+			"path": "."
+		}
+	]
+}
