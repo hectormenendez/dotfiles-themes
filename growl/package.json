@@ -12,17 +12,14 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "accord": "^0.16.0",
-    "babel": "^4.7.x",
-    "babel-eslint": "^2.0.2",
-    "del": "^1.1.x",
+    "accord": "^0.26.0",
+    "del": "^2.2.2",
     "gulp": "^3.8.x",
-    "gulp-eslint": "^0.7.x",
     "html-entities": "^1.1.2",
-    "jade": "^1.9.2",
-    "lodash": "^3.6.0",
-    "slugify": "^0.1.1",
-    "stylus": "^0.50.0",
-    "through2": "^0.6.3"
+    "jade": "^1.11.0",
+    "lodash": "^4.15.0",
+    "slugify": "^1.0.2",
+    "stylus": "^0.54.5",
+    "through2": "^2.0.1"
   }
 }

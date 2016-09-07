@@ -2,3 +2,4 @@ node_modules
 *.sublime-workspace
 *.growlStyle
 .DS*
+.tern-port
