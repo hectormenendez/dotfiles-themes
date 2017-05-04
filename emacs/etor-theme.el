@@ -1129,7 +1129,7 @@
         ))))
         `(magit-branch-current ((t (
             :background unspecified
-            :foreground unspecified
+            :foreground ,tx-name
             :inverse-video nil
             :slant italic
             :weight bold
