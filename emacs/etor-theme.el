@@ -971,6 +971,210 @@
             :strike-through nil
             :box nil
         ))))
+        `(magit-diff-added ((t (
+            :background unspecified
+            :foreground ,ui-note
+            :inverse-video nil
+            :slant normal
+            :weight normal
+            :height unspecified
+            :underline nil
+            :overline nil
+            :strike-through nil
+            :box nil
+        ))))
+        `(magit-diff-added-highlight ((t (
+            :background unspecified
+            :foreground ,ui-note
+            :inverse-video nil
+            :slant normal
+            :weight bold
+            :height unspecified
+            :underline nil
+            :overline nil
+            :strike-through nil
+            :box nil
+        ))))
+        `(magit-diff-removed ((t (
+            :background unspecified
+            :foreground ,ui-warn
+            :inverse-video nil
+            :slant normal
+            :weight normal
+            :height unspecified
+            :underline nil
+            :overline nil
+            :strike-through nil
+            :box nil
+        ))))
+        `(magit-diff-removed-highlight ((t (
+            :background unspecified
+            :foreground ,ui-warn
+            :inverse-video nil
+            :slant normal
+            :weight bold
+            :height unspecified
+            :underline nil
+            :overline nil
+            :strike-through nil
+            :box nil
+        ))))
+        `(magit-diff-context ((t (
+            :background unspecified
+            :foreground ,ui-drk4
+            :inverse-video nil
+            :slant italic
+            :weight normal
+            :height unspecified
+            :underline nil
+            :overline nil
+            :strike-through nil
+            :box nil
+        ))))
+        `(magit-diff-context-highlight ((t (
+            :background unspecified
+            :foreground ,ui-drk4
+            :inverse-video nil
+            :slant italic
+            :weight normal
+            :height unspecified
+            :underline nil
+            :overline nil
+            :strike-through nil
+            :box nil
+        ))))
+        `(magit-section-highlight ((t (
+            :background unspecified
+            :foreground unspecified
+            :inverse-video unspecified
+            :slant unspecified
+            :weight unspecified
+            :height unspecified
+            :underline unspecified
+            :overline unspecified
+            :strike-through unspecified
+            :box unspecified
+        ))))
+        `(magit-branch-local ((t (
+            :background unspecified
+            :foreground ,tx-name
+            :inverse-video nil
+            :slant normal
+            :weight bold
+            :height unspecified
+            :underline nil
+            :overline nil
+            :strike-through nil
+            :box nil
+        ))))
+        `(magit-branch-remote ((t (
+            :background unspecified
+            :foreground ,tx-keyw
+            :inverse-video nil
+            :slant normal
+            :weight bold
+            :height unspecified
+            :underline nil
+            :overline nil
+            :strike-through nil
+            :box nil
+        ))))
+        `(magit-section-heading ((t (
+            :background unspecified
+            :foreground ,tx-str
+            :inverse-video nil
+            :slant normal
+            :weight bold
+            :height unspecified
+            :underline nil
+            :overline nil
+            :strike-through nil
+            :box nil
+        ))))
+        `(magit-diff-file-heading ((t (
+            :background unspecified
+            :foreground ,ui-drk5
+            :inverse-video nil
+            :slant normal
+            :weight bold
+            :height unspecified
+            :underline nil
+            :overline nil
+            :strike-through nil
+            :box nil
+        ))))
+        `(magit-diff-hunk-heading ((t (
+            :background unspecified
+            :foreground ,tx-ext
+            :inverse-video nil
+            :slant normal
+            :weight normal
+            :height unspecified
+            :underline nil
+            :overline nil
+            :strike-through nil
+            :box nil
+        ))))
+        `(magit-diff-hunk-heading-highlight ((t (
+            :background unspecified
+            :foreground ,tx-ext
+            :inverse-video nil
+            :slant normal
+            :weight bold
+            :height unspecified
+            :underline nil
+            :overline nil
+            :strike-through nil
+            :box nil
+        ))))
+        `(magit-branch-current ((t (
+            :background unspecified
+            :foreground unspecified
+            :inverse-video nil
+            :slant italic
+            :weight bold
+            :height unspecified
+            :underline nil
+            :overline nil
+            :strike-through nil
+            :box nil
+        ))))
+        `(magit-diffstat-added ((t (
+            :background unspecified
+            :foreground ,ui-note
+            :inverse-video nil
+            :slant normal
+            :weight bold
+            :height unspecified
+            :underline nil
+            :overline nil
+            :strike-through nil
+            :box nil
+        ))))
+        `(magit-diffstat-removed ((t (
+            :background unspecified
+            :foreground ,ui-warn
+            :inverse-video nil
+            :slant normal
+            :weight bold
+            :height unspecified
+            :underline nil
+            :overline nil
+            :strike-through nil
+            :box nil
+        ))))
+        `(git-commit-summary ((t (
+            :background unspecified
+            :foreground ,tx-ext
+            :inverse-video nil
+            :slant normal
+            :weight normal
+            :height unspecified
+            :underline nil
+            :overline nil
+            :strike-through nil
+            :box nil
+        ))))
     )
 
     (custom-theme-set-variables 'etor
