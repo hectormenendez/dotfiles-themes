@@ -811,6 +811,18 @@
         ))))
 
     ;; Built-in Syntax
+        `(font-lock-doc-face ((t (
+            :background nil
+            :foreground ,ui-drk4
+            :inverse-video nil
+            :slant italic
+            :weight normal
+            :height unspecified
+            :underline nil
+            :overline nil
+            :strike-through nil
+            :box nil
+        ))))
         `(font-lock-comment-face ((t (
             :background nil
             :foreground ,ui-drk4
@@ -971,6 +983,20 @@
             :strike-through nil
             :box nil
         ))))
+        `(js2-jsdoc-tag ((t (
+            :background nil
+            :foreground ,ui-drk4
+            :inverse-video nil
+            :slant italic
+            :weight bold
+            :height unspecified
+            :underline nil
+            :overline nil
+            :strike-through nil
+            :box nil
+        ))))
+
+    ;; Magit & Version Control
         `(magit-diff-added ((t (
             :background unspecified
             :foreground ,ui-note
