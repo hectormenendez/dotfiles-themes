@@ -1,3 +1,6 @@
+html
+	font-size: 18px
+
 body, html
 	text-rendering : optimizeLegibility
 	font-family    : Helvetica
@@ -7,7 +10,7 @@ body, html
 	height         : 100%
 
 #container
-	background    : rgba(0,0,0,0.8)
+	background    : rgba(0,0,0,0.95)
 	overflow      : visible
 	width         : inherit
 	display       : table
@@ -32,12 +35,52 @@ aside
 
 article
 	& > div
-		margin      : 0
-		margin-left : 0.5em
+		margin: 0 0.5rem
 
 h1,p
-	color       : #fff
 	margin      : 0
 	padding     : 0
-	font-size   : 0.6em
 	white-space : nowrap
+
+h1
+	color       : #FFF
+	font-size   : 0.8rem
+	font-weight : bold
+
+	strong, em
+		font-weight: bolder
+		font-style:normal
+		vertical-align: super
+		font-size: 0.6rem
+
+	strong
+		color: tomato
+		&:after
+			content: ' ❤️'
+	em
+		color: lightgreen
+		&:after
+			content: ' 🍀'
+
+p
+	color       : #CCC
+	font-size   : 1rem
+	font-weight : normal
+
+	em
+		color: lightblue
+		font-style: normal
+		font-weight: bold
+
+	strong
+		color: lightpink
+		font-style: normal
+		font-weight: bold
+
+	u
+		display:block
+		margin:0
+		margin-right: 0.5rem
+		font-size: 0.7rem
+		color: deepskyblue
+		text-align: right

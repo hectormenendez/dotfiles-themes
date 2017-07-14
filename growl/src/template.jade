@@ -18,3 +18,33 @@ html
 				div
 					h1 %title%
 					p %text%
+		script.
+			(function runme(){
+				const p = document.getElementsByTagName('p')[0];
+				const h1 = document.getElementsByTagName('h1')[0];
+				// mentions
+				(p.innerHTML.match(/@\w+/g) || []).forEach(match => {
+					p.innerHTML = p.innerHTML
+						.replace(match, [ '<em>', match, '</em>' ].join(''));
+				});
+				// hashtags
+				(p.innerHTML.match(/#\w+/g) || []).forEach(match => {
+					p.innerHTML = p.innerHTML
+						.replace(match, [ '<strong>', match, '</strong>' ].join(''));
+				});
+				// urls
+				const rxurl = /(?:https?:\/\/)?(?:\w+\.)+(?:\.?\w+)[^\s]*/g;
+				(p.innerHTML.match(rxurl) || []).forEach(match => {
+					p.innerHTML = p.innerHTML
+						.replace(match, [ '<u>', match, '</u>' ].join(''));
+				});
+				// actions
+				(h1.innerHTML.trim().match(/liked$/g) || []).forEach(match => {
+					h1.innerHTML = h1.innerHTML
+						.replace(match, [ '<strong>', match, '</strong>' ].join(''));
+				});
+				(h1.innerHTML.trim().match(/followed$/g) || []).forEach(match => {
+					h1.innerHTML = h1.innerHTML
+						.replace(match, [ '<em>', match, '</em>' ].join(''));
+				});
+			})();
