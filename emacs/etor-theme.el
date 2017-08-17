@@ -446,10 +446,10 @@
         ))))
         `(helm-match ((t (; The current match on helm windows
             :background nil
-            :foreground nil
-            :inverse-video t
-            :slant normal
-            :weight normal
+            :foreground ,ui-lit5
+            :inverse-video nil
+            :slant unspecified
+            :weight ultra-bold
             :height unspecified
             :underline nil
             :overline nil
@@ -457,9 +457,9 @@
             :box nil
         ))))
         `(helm-selection ((t (; The currently highlighted line on helm
-            :background ,ui-drk2
+            :background ,ui-drk0
             :foreground nil
-            :inverse-video nil
+            :inverse-video t
             :slant normal
             :weight normal
             :height unspecified
