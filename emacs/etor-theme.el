@@ -45,12 +45,12 @@
         (ui-par3  "#465d89")
 
         (tx-1st   "#fe7f2d"); for identifiers
-        (tx-2nd   "#94b9af"); for builtins
-        (tx-3rd   "#5eb1bf"); for variables / properties / params
-        (tx-4th   "#22aaa1"); for methods
+        (tx-2nd   "#d28b71"); for builtins
+        (tx-3rd   "#52a5a1"); for variables / properties / params
+        (tx-4th   "#87ada8"); for methods
         (tx-5th   "#b8bb26"); for strings / regex
-        (tx-6th   "#fabd2f"); for constants
-        (tx-7th   "#d3869b"); for externals
+        (tx-6th   "#ffbd26"); for constants
+        (tx-7th   "#f8928e"); for externals
     )
 
     (custom-theme-set-faces 'etor
@@ -483,12 +483,24 @@
         `(js2-function-call ((t (
             :foreground ,tx-4th
             :slant normal
-            :weight normal
+            :weight bold
         ))))
         `(js2-jsdoc-tag ((t (
             :foreground ,ui-drk4
             :slant italic
             :weight bold
+        ))))
+        `(js2-highlight-vars-face ((t (
+            :background unspecified
+            :inverse-video t
+        ))))
+        `(js2-object-property ((t (
+            :foreground ,tx-4th
+            :weight normal
+        ))))
+        `(js2-highlight-vars-second-face ((t (
+            :background unspecified
+            :inverse-video t
         ))))
     ;; Magit & Version Control
         `(magit-diff-added ((t (
@@ -573,6 +585,7 @@
             :slant normal
             :weight normal
         ))))
+    ;; Javascript specific
     )
     (custom-theme-set-variables 'etor
         ;; Fill column indicator
