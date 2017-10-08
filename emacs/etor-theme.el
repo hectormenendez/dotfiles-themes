@@ -34,21 +34,23 @@
         (ui-lite  "#FDF0F0")
         (ui-note  "#9FD356")
         (ui-link  "#37AAE5")
-        (ui-info  "#FFB519")
-        (ui-warn  "#FB4934")
-        (ui-errr  "#9D0006")
+        (ui-trsh  "#FF4C6A")
+        (ui-info  "#4ECDC4")
+        (ui-warn  "#F5AA26")
+        (ui-errr  "#E50026")
         ;; delimiters
         (ui-par0  "#a05929")
         (ui-par1  "#7c445e")
         (ui-par2  "#2a5254")
         (ui-par3  "#465d89")
 
-        (tx-keyw   "#f98100")
-        (tx-name   "#74a7ad")
-        (tx-func   "#8ec07c")
-        (tx-str    "#B8BB26")
-        (tx-ext    "#fabd2f")
-        (tx-const  "#fd8d4f")
+        (tx-1st   "#fe7f2d"); for identifiers
+        (tx-2nd   "#94b9af"); for builtins
+        (tx-3rd   "#5eb1bf"); for variables / properties / params
+        (tx-4th   "#22aaa1"); for methods
+        (tx-5th   "#b8bb26"); for strings / regex
+        (tx-6th   "#fabd2f"); for constants
+        (tx-7th   "#d3869b"); for externals
     )
 
     (custom-theme-set-faces 'etor
@@ -57,1152 +59,521 @@
         `(default ((t (; The default face
             :background ,ui-drk1
             :foreground ,ui-lit4
-            :inverse-video nil
             :slant normal
             :weight normal
-            :height unspecified
-            :underline nil
-            :overline nil
-            :strike-through nil
-            :box nil
         ))))
         `(button ((t (; Text that's clickable
-            :background nil
             :foreground ,ui-link
-            :inverse-video nil
             :slant normal
             :weight normal
-            :height unspecified
             :underline t
-            :overline nil
-            :strike-through nil
-            :box nil
         ))))
         `(link ((t (; Text that's clickable
-            :background nil
             :foreground ,ui-link
-            :inverse-video nil
             :slant normal
             :weight normal
-            :height unspecified
             :underline t
-            :overline nil
-            :strike-through nil
-            :box nil
         ))))
         `(cursor ((t (; The cursor. Only the background matters
             :background ,ui-lit5
             :foreground ,ui-lit5
-            :inverse-video nil
             :slant normal
             :weight normal
-            :height unspecified
-            :underline nil
-            :overline nil
-            :strike-through nil
-            :box nil
         ))))
         `(isearch ((t (; matches when searching via emacs
             :background ,ui-info
             :foreground ,ui-drk0
-            :inverse-video nil
             :slant normal
             :weight normal
-            :height unspecified
-            :underline nil
-            :overline nil
-            :strike-through nil
-            :box nil
         ))))
         `(evil-ex-search ((t (; matches when searching via evil
             :background ,ui-info
             :foreground ,ui-drk0
-            :inverse-video nil
             :slant normal
             :weight normal
-            :height unspecified
-            :underline nil
-            :overline nil
-            :strike-through nil
-            :box nil
         ))))
         `(isearch-fail ((t (; non current matches
             :background ,ui-errr
             :foreground ,ui-dark
-            :inverse-video nil
             :slant normal
             :weight normal
-            :height unspecified
-            :underline nil
-            :overline nil
-            :strike-through nil
-            :box nil
         ))))
-
     ;; UI
         `(highlight ((t (; The currently highlighted line. Inherit the fg and set the bg.
             :background ,ui-drk2
-            :foreground nil
-            :inverse-video nil
-            :slant unspecified
-            :weight unspecified
-            :height unspecified
-            :underline nil
-            :overline nil
-            :strike-through nil
-            :box nil
         ))))
         `(hl-line ((t (; The same as highlight
             :background ,ui-drk2
-            :foreground nil
-            :inverse-video nil
-            :slant unspecified
-            :weight unspecified
-            :height unspecified
-            :underline nil
-            :overline nil
-            :strike-through nil
-            :box nil
         ))))
         `(region ((t (; The current selection (inverted colors)
-            :background nil
-            :foreground nil
             :inverse-video t
             :slant normal
             :weight normal
-            :height unspecified
-            :underline nil
-            :overline nil
-            :strike-through nil
-            :box nil
         ))))
         `(secondary-selection ((t (; When there's an active region, and select with M
             :background ,ui-lit4
             :foreground ,ui-drk1
-            :inverse-video nil
             :slant normal
             :weight normal
-            :height unspecified
-            :underline nil
-            :overline nil
-            :strike-through nil
-            :box nil
         ))))
         `(minibuffer-prompt ((t (; When user is prompted to write something on minibufffer
-            :background nil
             :foreground ,ui-note
-            :inverse-video nil
             :slant normal
             :weight ultra-bold
-            :height unspecified
-            :underline nil
-            :overline nil
-            :strike-through nil
-            :box nil
         ))))
         `(fringe ((t (; The margins on each side of the window (where arrows are placed)
             :background ,ui-drk0
             :foreground ,ui-dark
-            :inverse-video nil
             :slant normal
             :weight normal
-            :height unspecified
-            :underline nil
-            :overline nil
-            :strike-through nil
-            :box nil
         ))))
         `(vertical-border ((t (; The window divider (background is ignored)
             :background ,ui-dark
             :foreground ,ui-dark
-            :inverse-video nil
             :slant normal
             :weight normal
-            :height unspecified
-            :underline nil
-            :overline nil
-            :strike-through nil
-            :box nil
         ))))
         `(linum ((t (; The bar holding the line numbers
             :background ,ui-drk0
             :foreground ,ui-drk3
-            :inverse-video nil
             :slant normal
             :weight normal
-            :height unspecified
-            :underline nil
-            :overline nil
-            :strike-through nil
-            :box nil
         ))))
         `(linum-relative-current-face ((t (; The current line number for linum-relative
             :background ,ui-drk0
             :foreground ,ui-lit4
-            :inverse-video nil
             :slant normal
             :weight ultra-bold
-            :height unspecified
-            :underline nil
-            :overline nil
-            :strike-through nil
-            :box nil
         ))))
         `(highlight-indent-guides-character-face ((t (; Indentaion lines
-            :background nil
             :foreground ,ui-drk2
-            :inverse-video nil
             :slant normal
             :weight normal
-            :height unspecified
-            :underline nil
-            :overline nil
-            :strike-through nil
-            :box nil
         ))))
         `(git-gutter:modified ((t (; Modified VC lines on gutter
             :background ,ui-link
             :foreground ,ui-drk0
-            :inverse-video nil
             :slant normal
             :weight ultra-bold
-            :height unspecified
-            :underline nil
-            :overline nil
-            :strike-through nil
-            :box nil
         ))))
         `(git-gutter:added ((t (; Added VC lines on gutter
             :background ,ui-note
             :foreground ,ui-drk0
-            :inverse-video nil
             :slant normal
             :weight ultra-bold
-            :height unspecified
-            :underline nil
-            :overline nil
-            :strike-through nil
-            :box nil
         ))))
         `(git-gutter:deleted ((t (; Deleted VC lines on gutter
-            :background ,ui-warn
+            :background ,ui-trsh
             :foreground ,ui-drk0
-            :inverse-video nil
             :slant normal
             :weight ultra-bold
-            :height unspecified
-            :underline nil
-            :overline nil
-            :strike-through nil
-            :box nil
         ))))
         `(git-gutter:unchanged ((t (; The gutter for VC lines
             :background ,ui-drk0
             :foreground ,ui-drk0
-            :inverse-video nil
             :slant normal
             :weight normal
-            :height unspecified
-            :underline nil
-            :overline nil
-            :strike-through nil
-            :box nil
         ))))
-
     ;; UI: Mode Line
         `(mode-line ((t (; The active mode-line (center part)
+            :foreground ,ui-lit4
             :background ,ui-drk3
-            :foreground nil
-            :inverse-video nil
-            :slant unspecified
-            :weight unspecified
-            :height unspecified
-            :underline nil
-            :overline nil
-            :strike-through nil
-            :box nil
         ))))
         `(telephone-line-accent-active ((t (; The active accentuated modes
             :background ,ui-drk4
-            :foreground nil
-            :inverse-video nil
-            :slant unspecified
-            :weight unspecified
-            :height unspecified
-            :underline nil
-            :overline nil
-            :strike-through nil
-            :box nil
         ))))
         `(mode-line-inactive ((t (; The inactive mode-line (center part)
             :background ,ui-drk2
             :foreground ,ui-drk0
-            :inverse-video nil
-            :slant unspecified
-            :weight unspecified
-            :height unspecified
-            :underline nil
-            :overline nil
-            :strike-through nil
             :box nil
         ))))
         `(telephone-line-accent-inactive ((t (; the inactive accentuated modes
             :background ,ui-drk0
             :foreground ,ui-drk2
-            :inverse-video nil
-            :slant unspecified
-            :weight unspecified
-            :height unspecified
-            :underline nil
-            :overline nil
-            :strike-through nil
-            :box nil
         ))))
         `(telephone-line-evil-normal ((t (; normal-mode indicator on mode-line
             :background ,ui-lit4
             :foreground ,ui-drk0
-            :inverse-video nil
             :slant normal
             :weight ultra-bold
-            :height unspecified
-            :underline nil
-            :overline nil
-            :strike-through nil
-            :box nil
         ))))
         `(telephone-line-evil-insert ((t (; normal-mode indicator on mode-line
             :background ,ui-note
             :foreground ,ui-dark
-            :inverse-video nil
             :slant normal
             :weight ultra-bold
-            :height unspecified
-            :underline nil
-            :overline nil
-            :strike-through nil
-            :box nil
         ))))
         `(telephone-line-evil-replace ((t (; normal-mode indicator on mode-line
             :background ,ui-link
             :foreground ,ui-dark
-            :inverse-video nil
             :slant normal
             :weight ultra-bold
-            :height unspecified
-            :underline nil
-            :overline nil
-            :strike-through nil
-            :box nil
         ))))
         `(telephone-line-evil-visual ((t (; normal-mode indicator on mode-line
             :background ,ui-info
             :foreground ,ui-dark
-            :inverse-video nil
             :slant normal
             :weight ultra-bold
-            :height unspecified
-            :underline nil
-            :overline nil
-            :strike-through nil
-            :box nil
         ))))
         `(telephone-line-evil-emacs ((t (; normal-mode indicator on mode-line
             :background ,ui-warn
             :foreground ,ui-dark
-            :inverse-video nil
             :slant normal
             :weight ultra-bold
-            :height unspecified
-            :underline nil
-            :overline nil
-            :strike-through nil
-            :box nil
         ))))
         `(telephone-line-evil-operator ((t (; normal-mode indicator on mode-line
             :background ,ui-dark
             :foreground ,ui-lite
-            :inverse-video nil
             :slant normal
             :weight ultra-bold
-            :height unspecified
-            :underline nil
-            :overline nil
-            :strike-through nil
-            :box nil
         ))))
-
     ;; UI: Helm
         `(helm-source-header ((t (; The headers on helm menus
             :background ,ui-drk1
             :foreground ,ui-lite
-            :inverse-video nil
             :slant normal
             :weight ultra-bold
             :height 150
-            :underline nil
-            :overline nil
-            :strike-through nil
-            :box nil
         ))))
         `(helm-match ((t (; The current match on helm windows
-            :background nil
             :foreground ,ui-lit5
-            :inverse-video nil
-            :slant unspecified
             :weight ultra-bold
-            :height unspecified
-            :underline nil
-            :overline nil
-            :strike-through nil
-            :box nil
         ))))
         `(helm-selection ((t (; The currently highlighted line on helm
             :background ,ui-drk0
-            :foreground nil
             :inverse-video t
             :slant normal
             :weight normal
-            :height unspecified
-            :underline nil
-            :overline nil
-            :strike-through nil
-            :box nil
         ))))
         `(helm-action ((t (; Actions on helm
-            :background nil
             :foreground ,ui-link
-            :inverse-video nil
             :slant normal
             :weight normal
-            :height unspecified
             :underline t
-            :overline nil
-            :strike-through nil
-            :box nil
         ))))
         `(helm-M-x-key ((t (; Actions on helm
-            :background nil
             :foreground ,ui-info
-            :inverse-video nil
             :slant normal
             :weight ultra-bold
-            :height unspecified
-            :underline nil
-            :overline nil
-            :strike-through nil
-            :box nil
         ))))
-
     ;; UI: Custom
         `(custom-documentation ((t (; The explanation of custom items
             :background ,ui-drk1
             :foreground ,ui-drk4
-            :inverse-video nil
             :slant italic
             :weight normal
-            :height unspecified
-            :underline nil
-            :overline nil
-            :strike-through nil
-            :box nil
         ))))
         `(custom-group-tag ((t (; The headers on custom
             :background ,ui-drk1
             :foreground ,ui-lite
-            :inverse-video nil
             :slant normal
             :weight ultra-bold
             :height 150
-            :underline nil
-            :overline nil
-            :strike-through nil
-            :box nil
         ))))
         `(custom-state ((t (; The state text on custom
             :background ,ui-drk1
             :foreground ,ui-note
-            :inverse-video nil
             :slant normal
             :weight normal
-            :height unspecified
-            :underline nil
-            :overline nil
-            :strike-through nil
-            :box nil
         ))))
         `(custom-face-tag ((t (; The state text on custom
             :background ,ui-drk1
             :foreground ,ui-lit4
-            :inverse-video nil
             :slant normal
             :weight bold
-            :height unspecified
-            :underline nil
-            :overline nil
-            :strike-through nil
-            :box nil
         ))))
         `(custom-variable-tag ((t (; The state text on custom
             :background ,ui-drk1
             :foreground ,ui-lit4
-            :inverse-video nil
             :slant normal
             :weight bold
-            :height unspecified
-            :underline nil
-            :overline nil
-            :strike-through nil
-            :box nil
         ))))
     ;; Company
         `(company-scrollbar-bg ((t (; The cursor. Only the background matters
             :background ,ui-drk0
-            :foreground nil
-            :inverse-video nil
             :slant normal
             :weight normal
-            :height unspecified
-            :underline nil
-            :overline nil
-            :strike-through nil
-            :box nil
         ))))
         `(company-scrollbar-fg ((t (; The cursor. Only the background matters
             :background ,ui-drk3
-            :foreground nil
-            :inverse-video nil
             :slant normal
             :weight normal
-            :height unspecified
-            :underline nil
-            :overline nil
-            :strike-through nil
-            :box nil
         ))))
         `(company-tooltip ((t (; The cursor. Only the background matters
             :background ,ui-lit3
             :foreground ,ui-drk1
-            :inverse-video nil
             :slant normal
             :weight normal
-            :height unspecified
-            :underline nil
-            :overline nil
-            :strike-through nil
-            :box nil
         ))))
         `(company-tooltip-selection ((t (; The cursor. Only the background matters
             :background ,ui-lit4
             :foreground ,ui-drk2
-            :inverse-video nil
             :slant normal
             :weight normal
-            :height unspecified
-            :underline nil
-            :overline nil
-            :strike-through nil
-            :box nil
         ))))
         `(company-tooltip-mouse ((t (; The cursor. Only the background matters
             :background ,ui-lit5
-            :foreground nil
-            :inverse-video nil
             :slant normal
             :weight normal
-            :height unspecified
-            :underline nil
-            :overline nil
-            :strike-through nil
-            :box nil
         ))))
         `(company-tooltip-common ((t (; The cursor. Only the background matters
-            :background nil
             :foreground ,ui-drk5
-            :inverse-video nil
             :slant normal
             :weight bold
-            :height unspecified
-            :underline nil
-            :overline nil
-            :strike-through nil
-            :box nil
         ))))
         `(company-tooltip-common-selection ((t (; The cursor. Only the background matters
-            :background nil
             :foreground ,ui-drk5
-            :inverse-video nil
             :slant normal
             :weight bold
-            :height unspecified
-            :underline nil
-            :overline nil
-            :strike-through nil
-            :box nil
         ))))
         `(company-preview-common ((t (; The cursor. Only the background matters
             :background ,ui-note
             :foreground ,ui-drk2
-            :inverse-video nil
             :slant normal
             :weight bold
-            :height unspecified
-            :underline nil
-            :overline nil
-            :strike-through nil
-            :box nil
         ))))
-
     ;; SmartParens
         `(rainbow-delimiters-depth-1-face ((t (
-            :background nil
             :foreground ,ui-par0
-            :inverse-video nil
             :slant normal
             :weight bold
-            :height unspecified
-            :underline nil
-            :overline nil
-            :strike-through nil
-            :box nil
         ))))
         `(rainbow-delimiters-depth-2-face ((t (
-            :background nil
             :foreground ,ui-par1
-            :inverse-video nil
             :slant normal
             :weight bold
-            :height unspecified
-            :underline nil
-            :overline nil
-            :strike-through nil
-            :box nil
         ))))
         `(rainbow-delimiters-depth-3-face ((t (
-            :background nil
             :foreground ,ui-par2
-            :inverse-video nil
             :slant normal
             :weight bold
-            :height unspecified
-            :underline nil
-            :overline nil
-            :strike-through nil
-            :box nil
         ))))
         `(rainbow-delimiters-depth-4-face ((t (
-            :background nil
             :foreground ,ui-par3
-            :inverse-video nil
             :slant normal
             :weight bold
-            :height unspecified
-            :underline nil
-            :overline nil
-            :strike-through nil
-            :box nil
         ))))
         `(rainbow-delimiters-depth-4-face ((t (
-            :background nil
             :foreground ,ui-par3
-            :inverse-video nil
             :slant normal
             :weight bold
-            :height unspecified
-            :underline nil
-            :overline nil
-            :strike-through nil
-            :box nil
         ))))
         `(rainbow-delimiters-depth-5-face ((t (
-            :background nil
             :foreground ,ui-par0
-            :inverse-video nil
             :slant normal
             :weight bold
-            :height unspecified
-            :underline nil
-            :overline nil
-            :strike-through nil
-            :box nil
         ))))
         `(rainbow-delimiters-depth-6-face ((t (
-            :background nil
             :foreground ,ui-par1
-            :inverse-video nil
             :slant normal
             :weight bold
-            :height unspecified
-            :underline nil
-            :overline nil
-            :strike-through nil
-            :box nil
         ))))
         `(rainbow-delimiters-depth-7-face ((t (
-            :background nil
             :foreground ,ui-par2
-            :inverse-video nil
             :slant normal
             :weight bold
-            :height unspecified
-            :underline nil
-            :overline nil
-            :strike-through nil
-            :box nil
         ))))
         `(rainbow-delimiters-depth-8-face ((t (
-            :background nil
             :foreground ,ui-par3
-            :inverse-video nil
             :slant normal
             :weight bold
-            :height unspecified
-            :underline nil
-            :overline nil
-            :strike-through nil
-            :box nil
         ))))
         `(rainbow-delimiters-depth-9-face ((t (
-            :background nil
             :foreground ,ui-par0
-            :inverse-video nil
             :slant normal
             :weight bold
-            :height unspecified
-            :underline nil
-            :overline nil
-            :strike-through nil
-            :box nil
         ))))
         `(rainbow-delimiters-depth-10-face ((t (
-            :background nil
             :foreground ,ui-par1
-            :inverse-video nil
             :slant normal
             :weight bold
-            :height unspecified
-            :underline nil
-            :overline nil
-            :strike-through nil
-            :box nil
         ))))
         `(rainbow-delimiters-depth-11-face ((t (
-            :background nil
             :foreground ,ui-par2
-            :inverse-video nil
             :slant normal
             :weight bold
-            :height unspecified
-            :underline nil
-            :overline nil
-            :strike-through nil
-            :box nil
         ))))
         `(rainbow-delimiters-depth-12-face ((t (
-            :background nil
             :foreground ,ui-par3
-            :inverse-video nil
             :slant normal
             :weight bold
-            :height unspecified
-            :underline nil
-            :overline nil
-            :strike-through nil
-            :box nil
         ))))
-
     ;; Built-in Syntax
         `(font-lock-doc-face ((t (
-            :background nil
             :foreground ,ui-drk4
-            :inverse-video nil
             :slant italic
             :weight normal
-            :height unspecified
-            :underline nil
-            :overline nil
-            :strike-through nil
-            :box nil
         ))))
         `(font-lock-comment-face ((t (
-            :background nil
             :foreground ,ui-drk4
-            :inverse-video nil
             :slant italic
             :weight normal
-            :height unspecified
-            :underline nil
-            :overline nil
-            :strike-through nil
-            :box nil
         ))))
         `(font-lock-keyword-face ((t (
-            :background nil
-            :foreground ,tx-keyw
-            :inverse-video nil
+            :foreground ,tx-1st
             :slant normal
             :weight bold
-            :height unspecified
-            :underline nil
-            :overline nil
-            :strike-through nil
-            :box nil
         ))))
         `(font-lock-string-face ((t (
-            :background nil
-            :foreground ,tx-str
-            :inverse-video nil
+            :foreground ,tx-5th
             :slant normal
             :weight normal
-            :height unspecified
-            :underline nil
-            :overline nil
-            :strike-through nil
-            :box nil
         ))))
         `(font-lock-builtin-face ((t (
-            :background nil
-            :foreground ,tx-name
-            :inverse-video nil
+            :foreground ,tx-2nd
             :slant normal
             :weight bold
-            :height unspecified
-            :underline nil
-            :overline nil
-            :strike-through nil
-            :box nil
         ))))
         `(font-lock-function-name-face ((t (
-            :background nil
-            :foreground ,tx-name
-            :inverse-video nil
+            :foreground ,tx-3rd
             :slant normal
             :weight normal
-            :height unspecified
-            :underline nil
-            :overline nil
-            :strike-through nil
-            :box nil
         ))))
         `(font-lock-variable-name-face ((t (
-            :background nil
-            :foreground ,tx-name
-            :inverse-video nil
+            :foreground ,tx-3rd
             :slant normal
             :weight normal
-            :height unspecified
-            :underline nil
-            :overline nil
-            :strike-through nil
-            :box nil
         ))))
         `(font-lock-constant-face ((t (
-            :background nil
-            :foreground ,tx-const
-            :inverse-video nil
+            :foreground ,tx-6th
             :slant normal
             :weight bold
-            :height unspecified
-            :underline nil
-            :overline nil
-            :strike-through nil
-            :box nil
         ))))
         `(highlight-numbers-number ((t (
-            :background nil
-            :foreground ,tx-str
-            :inverse-video nil
+            :foreground ,tx-5th
             :slant normal
             :weight normal
-            :height unspecified
-            :underline nil
-            :overline nil
-            :strike-through nil
-            :box nil
         ))))
-
+    ;; Flycheck
+        `(flycheck-error ((t (
+            :underline (:style wave :color ,ui-errr)
+        ))))
+        `(flycheck-warning ((t (
+            :underline (:style wave :color ,ui-warn)
+        ))))
+        `(error ((t (
+            :foreground ,ui-errr
+            :weight bold
+        ))))
+        `(warning ((t (
+            :foreground ,ui-errr
+        ))))
     ;; Emacs Lisp - especific
         `(highlight-quoted-symbol ((t (
-            :background nil
-            :foreground ,tx-str
-            :inverse-video nil
+            :foreground ,tx-5th
             :slant normal
             :weight normal
-            :height unspecified
-            :underline nil
-            :overline nil
-            :strike-through nil
-            :box nil
         ))))
         `(highlight-quoted-quote ((t (
-            :background nil
-            :foreground ,tx-str
-            :inverse-video nil
+            :foreground ,tx-5th
             :slant normal
             :weight normal
-            :height unspecified
-            :underline nil
-            :overline nil
-            :strike-through nil
-            :box nil
         ))))
-
     ;; JS2 - especific
         `(js2-external-variable ((t (
-            :background nil
-            :foreground ,tx-ext
-            :inverse-video nil
+            :foreground ,tx-7th
             :slant normal
             :weight bold
-            :height unspecified
-            :underline nil
-            :overline nil
-            :strike-through nil
-            :box nil
         ))))
         `(js2-function-param ((t (
-            :background nil
-            :foreground ,tx-name
-            :inverse-video nil
+            :foreground ,tx-3rd
             :slant normal
             :weight normal
-            :height unspecified
-            :underline nil
-            :overline nil
-            :strike-through nil
-            :box nil
         ))))
         `(js2-function-call ((t (
-            :background nil
-            :foreground ,tx-func
-            :inverse-video nil
+            :foreground ,tx-4th
             :slant normal
             :weight normal
-            :height unspecified
-            :underline nil
-            :overline nil
-            :strike-through nil
-            :box nil
         ))))
         `(js2-jsdoc-tag ((t (
-            :background nil
             :foreground ,ui-drk4
-            :inverse-video nil
             :slant italic
             :weight bold
-            :height unspecified
-            :underline nil
-            :overline nil
-            :strike-through nil
-            :box nil
         ))))
-
     ;; Magit & Version Control
         `(magit-diff-added ((t (
-            :background unspecified
             :foreground ,ui-note
-            :inverse-video nil
             :slant normal
             :weight normal
-            :height unspecified
-            :underline nil
-            :overline nil
-            :strike-through nil
-            :box nil
         ))))
         `(magit-diff-added-highlight ((t (
-            :background unspecified
             :foreground ,ui-note
-            :inverse-video nil
             :slant normal
             :weight bold
-            :height unspecified
-            :underline nil
-            :overline nil
-            :strike-through nil
-            :box nil
         ))))
         `(magit-diff-removed ((t (
-            :background unspecified
             :foreground ,ui-warn
-            :inverse-video nil
             :slant normal
             :weight normal
-            :height unspecified
-            :underline nil
-            :overline nil
-            :strike-through nil
-            :box nil
         ))))
         `(magit-diff-removed-highlight ((t (
-            :background unspecified
             :foreground ,ui-warn
-            :inverse-video nil
             :slant normal
             :weight bold
-            :height unspecified
-            :underline nil
-            :overline nil
-            :strike-through nil
-            :box nil
         ))))
         `(magit-diff-context ((t (
-            :background unspecified
             :foreground ,ui-drk4
-            :inverse-video nil
             :slant italic
             :weight normal
-            :height unspecified
-            :underline nil
-            :overline nil
-            :strike-through nil
-            :box nil
         ))))
         `(magit-diff-context-highlight ((t (
-            :background unspecified
             :foreground ,ui-drk4
-            :inverse-video nil
             :slant italic
             :weight normal
-            :height unspecified
-            :underline nil
-            :overline nil
-            :strike-through nil
-            :box nil
         ))))
         `(magit-section-highlight ((t (
-            :background unspecified
-            :foreground unspecified
-            :inverse-video unspecified
-            :slant unspecified
-            :weight unspecified
-            :height unspecified
-            :underline unspecified
-            :overline unspecified
-            :strike-through unspecified
-            :box unspecified
         ))))
         `(magit-branch-local ((t (
-            :background unspecified
-            :foreground ,tx-name
-            :inverse-video nil
+            :foreground ,tx-3rd
             :slant normal
             :weight bold
-            :height unspecified
-            :underline nil
-            :overline nil
-            :strike-through nil
-            :box nil
         ))))
         `(magit-branch-remote ((t (
-            :background unspecified
-            :foreground ,tx-keyw
-            :inverse-video nil
+            :foreground ,tx-1st
             :slant normal
             :weight bold
-            :height unspecified
-            :underline nil
-            :overline nil
-            :strike-through nil
-            :box nil
         ))))
         `(magit-section-heading ((t (
-            :background unspecified
-            :foreground ,tx-str
-            :inverse-video nil
+            :foreground ,tx-5th
             :slant normal
             :weight bold
-            :height unspecified
-            :underline nil
-            :overline nil
-            :strike-through nil
-            :box nil
         ))))
         `(magit-diff-file-heading ((t (
-            :background unspecified
             :foreground ,ui-drk5
-            :inverse-video nil
             :slant normal
             :weight bold
-            :height unspecified
-            :underline nil
-            :overline nil
-            :strike-through nil
-            :box nil
         ))))
         `(magit-diff-hunk-heading ((t (
-            :background unspecified
-            :foreground ,tx-ext
-            :inverse-video nil
+            :foreground ,tx-7th
             :slant normal
             :weight normal
-            :height unspecified
-            :underline nil
-            :overline nil
-            :strike-through nil
-            :box nil
         ))))
         `(magit-diff-hunk-heading-highlight ((t (
-            :background unspecified
-            :foreground ,tx-ext
-            :inverse-video nil
+            :foreground ,tx-7th
             :slant normal
             :weight bold
-            :height unspecified
-            :underline nil
-            :overline nil
-            :strike-through nil
-            :box nil
         ))))
         `(magit-branch-current ((t (
-            :background unspecified
-            :foreground ,tx-name
-            :inverse-video nil
+            :foreground ,tx-3rd
             :slant italic
             :weight bold
-            :height unspecified
-            :underline nil
-            :overline nil
-            :strike-through nil
-            :box nil
         ))))
         `(magit-diffstat-added ((t (
-            :background unspecified
             :foreground ,ui-note
-            :inverse-video nil
             :slant normal
             :weight bold
-            :height unspecified
-            :underline nil
-            :overline nil
-            :strike-through nil
-            :box nil
         ))))
         `(magit-diffstat-removed ((t (
-            :background unspecified
             :foreground ,ui-warn
-            :inverse-video nil
             :slant normal
             :weight bold
-            :height unspecified
-            :underline nil
-            :overline nil
-            :strike-through nil
-            :box nil
         ))))
         `(git-commit-summary ((t (
-            :background unspecified
-            :foreground ,tx-ext
-            :inverse-video nil
+            :foreground ,tx-7th
             :slant normal
             :weight normal
-            :height unspecified
-            :underline nil
-            :overline nil
-            :strike-through nil
-            :box nil
         ))))
     )
-
     (custom-theme-set-variables 'etor
         ;; Fill column indicator
         `(fci-rule-color ,ui-drk2)
@@ -1221,7 +592,6 @@
         `(evil-operator-state-cursor '(,ui-dark hollow))
     )
 )
-
 ;;;###autoload
 (when load-file-name
     (add-to-list
@@ -1229,11 +599,8 @@
         (file-name-as-directory (file-name-directory load-file-name))
     )
 )
-
 (provide-theme 'etor)
-
 ;; Loacal Variables:
 ;; no-byte-compile: t
 ;; End:
-
 ;;; etor-theme.el ends here
