@@ -49,7 +49,7 @@
         (tx-3rd   "#52A5A1"); for variables / properties / params
         (tx-4th   "#87ADA8"); for methods
         (tx-5th   "#B8BB26"); for strings / regex
-        (tx-6th   "#FFBD26"); for constants
+        (tx-6th   "#e5b72d"); for constants
         (tx-7th   "#F8928E"); for externals
     )
 
