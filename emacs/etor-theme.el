@@ -103,7 +103,12 @@
             :background ,ui-drk2
         ))))
         `(hl-line ((t (; The same as highlight
+            :foreground unspecified
             :background ,ui-drk2
+        ))))
+        `(hl-todo ((t (; The same as highlight
+            :foreground ,ui-info
+            :weight bold
         ))))
         `(region ((t (; The current selection (inverted colors)
             :inverse-video t
@@ -603,6 +608,24 @@
         `(evil-insert-state-cursor '(,ui-note bar))
         `(evil-replace-state-cursor '(,ui-link bar))
         `(evil-operator-state-cursor '(,ui-dark hollow))
+        `(hl-todo-keyword-faces '(
+            ("HOLD"   . ,ui-info)
+            ("NOTE"   . ,ui-info)
+            ("KLUDGE" . ,ui-info)
+            ("PROG"   . ,ui-info)
+            ("OKAY"   . ,ui-info)
+            ("THEM"   . ,ui-warn)
+            ("DONE"   . ,ui-warn)
+            ("DONT"   . ,ui-warn)
+            ("TODO"   . ,ui-warn)
+            ("NEXT"   . ,ui-warn)
+            ("HACK"   . ,ui-errr)
+            ("FAIL"   . ,ui-errr)
+            ("FIXME"  . ,ui-errr)
+            ("XXX"    . ,ui-errr)
+            ("XXXX"   . ,ui-errr)
+            ("???"    . ,ui-errr)
+        ))
     )
 )
 ;;;###autoload
