@@ -456,7 +456,7 @@
             :weight bold
         ))))
         `(warning ((t (
-            :foreground ,ui-errr
+            :foreground ,ui-warn
         ))))
     ;; Emacs Lisp - especific
         `(highlight-quoted-symbol ((t (
