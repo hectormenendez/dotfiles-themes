@@ -30,27 +30,27 @@
         (ui-lit2  "#A89984")
         (ui-lit3  "#BDAE93")
         (ui-lit4  "#D5C4A1")
-        (ui-lit5  "#F7e3BB")
+        (ui-lit5  "#F7E3BB")
         (ui-lite  "#FDF0F0")
         (ui-note  "#9FD356")
         (ui-link  "#37AAE5")
         (ui-trsh  "#FF4C6A")
-        (ui-info  "#4ECDC4")
-        (ui-warn  "#F5AA26")
+        (ui-info  "#08BDBD")
+        (ui-warn  "#F49D37")
         (ui-errr  "#E50026")
         ;; delimiters
-        (ui-par0  "#a05929")
-        (ui-par1  "#7c445e")
-        (ui-par2  "#2a5254")
-        (ui-par3  "#465d89")
-
-        (tx-1st   "#fe7f2d"); for identifiers
-        (tx-2nd   "#d28b71"); for builtins
-        (tx-3rd   "#52a5a1"); for variables / properties / params
-        (tx-4th   "#87ada8"); for methods
-        (tx-5th   "#b8bb26"); for strings / regex
-        (tx-6th   "#ffbd26"); for constants
-        (tx-7th   "#f8928e"); for externals
+        (ui-par0  "#A05929")
+        (ui-par1  "#7C445E")
+        (ui-par2  "#2A5254")
+        (ui-par3  "#465D89")
+        ;; text color
+        (tx-1st   "#FE7F2D"); for identifiers
+        (tx-2nd   "#D28B71"); for builtins
+        (tx-3rd   "#52A5A1"); for variables / properties / params
+        (tx-4th   "#87ADA8"); for methods
+        (tx-5th   "#B8BB26"); for strings / regex
+        (tx-6th   "#FFBD26"); for constants
+        (tx-7th   "#F8928E"); for externals
     )
 
     (custom-theme-set-faces 'etor
