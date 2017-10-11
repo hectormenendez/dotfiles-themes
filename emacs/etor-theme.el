@@ -519,12 +519,12 @@
             :weight bold
         ))))
         `(magit-diff-removed ((t (
-            :foreground ,ui-warn
+            :foreground ,ui-trsh
             :slant normal
             :weight normal
         ))))
         `(magit-diff-removed-highlight ((t (
-            :foreground ,ui-warn
+            :foreground ,ui-trsh
             :slant normal
             :weight bold
         ))))
@@ -581,7 +581,7 @@
             :weight bold
         ))))
         `(magit-diffstat-removed ((t (
-            :foreground ,ui-warn
+            :foreground ,ui-trsh
             :slant normal
             :weight bold
         ))))
