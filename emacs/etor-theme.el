@@ -138,13 +138,13 @@
             :slant normal
             :weight normal
         ))))
-        `(linum ((t (; The bar holding the line numbers
+        `(line-number ((t (; The bar holding the line numbers
             :background ,ui-drk0
             :foreground ,ui-drk3
             :slant normal
             :weight normal
         ))))
-        `(linum-relative-current-face ((t (; The current line number for linum-relative
+        `(line-number-current-line ((t (; The current line number for linum-relative
             :background ,ui-drk0
             :foreground ,ui-lit4
             :slant normal
