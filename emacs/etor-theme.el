@@ -59,44 +59,31 @@
         `(default ((t (; The default face
             :background ,ui-drk1
             :foreground ,ui-lit4
-            :slant normal
-            :weight normal
+
         ))))
         `(button ((t (; Text that's clickable
             :foreground ,ui-link
-            :slant normal
-            :weight normal
             :underline t
         ))))
         `(link ((t (; Text that's clickable
             :foreground ,ui-link
-            :slant normal
-            :weight normal
             :underline t
         ))))
         `(cursor ((t (; The cursor. Only the background matters
             :background ,ui-lit5
             :foreground ,ui-lit5
-            :slant normal
-            :weight normal
         ))))
         `(isearch ((t (; matches when searching via emacs
             :background ,ui-info
             :foreground ,ui-drk0
-            :slant normal
-            :weight normal
         ))))
         `(evil-ex-search ((t (; matches when searching via evil
             :background ,ui-info
             :foreground ,ui-drk0
-            :slant normal
-            :weight normal
         ))))
         `(isearch-fail ((t (; non current matches
             :background ,ui-errr
             :foreground ,ui-dark
-            :slant normal
-            :weight normal
         ))))
     ;; UI
         `(highlight ((t (; The currently highlighted line. Inherit the fg and set the bg.
@@ -112,72 +99,55 @@
         ))))
         `(region ((t (; The current selection (inverted colors)
             :inverse-video t
-            :slant normal
-            :weight normal
         ))))
         `(secondary-selection ((t (; When there's an active region, and select with M
             :background ,ui-lit4
             :foreground ,ui-drk1
-            :slant normal
-            :weight normal
         ))))
         `(minibuffer-prompt ((t (; When user is prompted to write something on minibufffer
             :foreground ,ui-note
-            :slant normal
-            :weight ultra-bold
+            :weight bold
         ))))
         `(fringe ((t (; The margins on each side of the window (where arrows are placed)
             :background ,ui-drk0
             :foreground ,ui-dark
-            :slant normal
-            :weight normal
         ))))
         `(vertical-border ((t (; The window divider (background is ignored)
             :background ,ui-dark
             :foreground ,ui-dark
-            :slant normal
-            :weight normal
         ))))
         `(line-number ((t (; The bar holding the line numbers
             :background ,ui-drk0
             :foreground ,ui-drk3
-            :slant normal
-            :weight normal
         ))))
         `(line-number-current-line ((t (; The current line number for linum-relative
             :background ,ui-drk0
             :foreground ,ui-lit4
-            :slant normal
-            :weight ultra-bold
+            :weight bold
         ))))
         `(highlight-indent-guides-character-face ((t (; Indentaion lines
             :foreground ,ui-drk2
-            :slant normal
-            :weight normal
+
         ))))
         `(git-gutter:modified ((t (; Modified VC lines on gutter
             :background ,ui-link
             :foreground ,ui-drk0
-            :slant normal
-            :weight ultra-bold
+            :weight bold
         ))))
         `(git-gutter:added ((t (; Added VC lines on gutter
             :background ,ui-note
             :foreground ,ui-drk0
-            :slant normal
-            :weight ultra-bold
+            :weight bold
         ))))
         `(git-gutter:deleted ((t (; Deleted VC lines on gutter
             :background ,ui-trsh
             :foreground ,ui-drk0
-            :slant normal
-            :weight ultra-bold
+            :weight bold
         ))))
         `(git-gutter:unchanged ((t (; The gutter for VC lines
             :background ,ui-drk0
             :foreground ,ui-drk0
-            :slant normal
-            :weight normal
+
         ))))
     ;; UI: Mode Line
         `(mode-line ((t (; The active mode-line (center part)
@@ -199,255 +169,197 @@
         `(telephone-line-evil-normal ((t (; normal-mode indicator on mode-line
             :background ,ui-lit4
             :foreground ,ui-drk0
-            :slant normal
-            :weight ultra-bold
+            :weight bold
         ))))
         `(telephone-line-evil-insert ((t (; normal-mode indicator on mode-line
             :background ,ui-note
             :foreground ,ui-dark
-            :slant normal
-            :weight ultra-bold
+            :weight bold
         ))))
         `(telephone-line-evil-replace ((t (; normal-mode indicator on mode-line
             :background ,ui-link
             :foreground ,ui-dark
-            :slant normal
-            :weight ultra-bold
+            :weight bold
         ))))
         `(telephone-line-evil-visual ((t (; normal-mode indicator on mode-line
             :background ,ui-info
             :foreground ,ui-dark
-            :slant normal
-            :weight ultra-bold
+            :weight bold
         ))))
         `(telephone-line-evil-emacs ((t (; normal-mode indicator on mode-line
             :background ,ui-warn
             :foreground ,ui-dark
-            :slant normal
-            :weight ultra-bold
+            :weight bold
         ))))
         `(telephone-line-evil-operator ((t (; normal-mode indicator on mode-line
             :background ,ui-dark
             :foreground ,ui-lite
-            :slant normal
-            :weight ultra-bold
+            :weight bold
         ))))
     ;; UI: Helm
         `(helm-source-header ((t (; The headers on helm menus
             :background ,ui-drk1
             :foreground ,ui-lite
-            :slant normal
-            :weight ultra-bold
+            :weight bold
             :height 150
         ))))
         `(helm-match ((t (; The current match on helm windows
             :foreground ,ui-lit5
-            :weight ultra-bold
+            :weight bold
         ))))
         `(helm-selection ((t (; The currently highlighted line on helm
             :background ,ui-drk0
             :inverse-video t
-            :slant normal
-            :weight normal
         ))))
         `(helm-action ((t (; Actions on helm
             :foreground ,ui-link
-            :slant normal
-            :weight normal
             :underline t
         ))))
         `(helm-M-x-key ((t (; Actions on helm
             :foreground ,ui-info
-            :slant normal
-            :weight ultra-bold
+            :weight bold
         ))))
     ;; UI: Custom
         `(custom-documentation ((t (; The explanation of custom items
             :background ,ui-drk1
             :foreground ,ui-drk4
             :slant italic
-            :weight normal
         ))))
         `(custom-group-tag ((t (; The headers on custom
             :background ,ui-drk1
             :foreground ,ui-lite
-            :slant normal
-            :weight ultra-bold
+            :weight bold
             :height 150
         ))))
         `(custom-state ((t (; The state text on custom
             :background ,ui-drk1
             :foreground ,ui-note
-            :slant normal
-            :weight normal
         ))))
         `(custom-face-tag ((t (; The state text on custom
             :background ,ui-drk1
             :foreground ,ui-lit4
-            :slant normal
             :weight bold
         ))))
         `(custom-variable-tag ((t (; The state text on custom
             :background ,ui-drk1
             :foreground ,ui-lit4
-            :slant normal
             :weight bold
         ))))
     ;; Company
         `(company-scrollbar-bg ((t (; The cursor. Only the background matters
             :background ,ui-drk0
-            :slant normal
-            :weight normal
         ))))
         `(company-scrollbar-fg ((t (; The cursor. Only the background matters
             :background ,ui-drk3
-            :slant normal
-            :weight normal
         ))))
         `(company-tooltip ((t (; The cursor. Only the background matters
             :background ,ui-lit3
             :foreground ,ui-drk1
-            :slant normal
-            :weight normal
         ))))
         `(company-tooltip-selection ((t (; The cursor. Only the background matters
             :background ,ui-lit4
             :foreground ,ui-drk2
-            :slant normal
-            :weight normal
         ))))
         `(company-tooltip-mouse ((t (; The cursor. Only the background matters
             :background ,ui-lit5
-            :slant normal
-            :weight normal
         ))))
         `(company-tooltip-common ((t (; The cursor. Only the background matters
             :foreground ,ui-drk5
-            :slant normal
             :weight bold
         ))))
         `(company-tooltip-common-selection ((t (; The cursor. Only the background matters
             :foreground ,ui-drk5
-            :slant normal
             :weight bold
         ))))
         `(company-preview-common ((t (; The cursor. Only the background matters
             :background ,ui-note
             :foreground ,ui-drk2
-            :slant normal
             :weight bold
         ))))
     ;; SmartParens
         `(rainbow-delimiters-depth-1-face ((t (
             :foreground ,ui-par0
-            :slant normal
             :weight bold
         ))))
         `(rainbow-delimiters-depth-2-face ((t (
             :foreground ,ui-par1
-            :slant normal
             :weight bold
         ))))
         `(rainbow-delimiters-depth-3-face ((t (
             :foreground ,ui-par2
-            :slant normal
             :weight bold
         ))))
         `(rainbow-delimiters-depth-4-face ((t (
             :foreground ,ui-par3
-            :slant normal
             :weight bold
         ))))
         `(rainbow-delimiters-depth-4-face ((t (
             :foreground ,ui-par3
-            :slant normal
             :weight bold
         ))))
         `(rainbow-delimiters-depth-5-face ((t (
             :foreground ,ui-par0
-            :slant normal
             :weight bold
         ))))
         `(rainbow-delimiters-depth-6-face ((t (
             :foreground ,ui-par1
-            :slant normal
             :weight bold
         ))))
         `(rainbow-delimiters-depth-7-face ((t (
             :foreground ,ui-par2
-            :slant normal
             :weight bold
         ))))
         `(rainbow-delimiters-depth-8-face ((t (
             :foreground ,ui-par3
-            :slant normal
             :weight bold
         ))))
         `(rainbow-delimiters-depth-9-face ((t (
             :foreground ,ui-par0
-            :slant normal
             :weight bold
         ))))
         `(rainbow-delimiters-depth-10-face ((t (
             :foreground ,ui-par1
-            :slant normal
             :weight bold
         ))))
         `(rainbow-delimiters-depth-11-face ((t (
             :foreground ,ui-par2
-            :slant normal
             :weight bold
         ))))
         `(rainbow-delimiters-depth-12-face ((t (
             :foreground ,ui-par3
-            :slant normal
             :weight bold
         ))))
     ;; Built-in Syntax
         `(font-lock-doc-face ((t (
             :foreground ,ui-drk4
             :slant italic
-            :weight normal
         ))))
         `(font-lock-comment-face ((t (
             :foreground ,ui-drk4
-            :slant italic
-            :weight normal
         ))))
         `(font-lock-keyword-face ((t (
             :foreground ,tx-1st
-            :slant normal
             :weight bold
         ))))
         `(font-lock-string-face ((t (
             :foreground ,tx-5th
-            :slant normal
-            :weight normal
         ))))
         `(font-lock-builtin-face ((t (
             :foreground ,tx-2nd
-            :slant normal
             :weight bold
         ))))
         `(font-lock-function-name-face ((t (
             :foreground ,tx-3rd
-            :slant normal
-            :weight normal
         ))))
         `(font-lock-variable-name-face ((t (
             :foreground ,tx-3rd
-            :slant normal
-            :weight normal
         ))))
         `(font-lock-constant-face ((t (
             :foreground ,tx-6th
-            :slant normal
             :weight bold
         ))))
         `(highlight-numbers-number ((t (
             :foreground ,tx-5th
-            :slant normal
-            :weight normal
         ))))
     ;; Flycheck
         `(flycheck-error ((t (
@@ -466,28 +378,20 @@
     ;; Emacs Lisp - especific
         `(highlight-quoted-symbol ((t (
             :foreground ,tx-5th
-            :slant normal
-            :weight normal
         ))))
         `(highlight-quoted-quote ((t (
             :foreground ,tx-5th
-            :slant normal
-            :weight normal
         ))))
     ;; JS2 - especific
         `(js2-external-variable ((t (
             :foreground ,tx-7th
-            :slant normal
             :weight bold
         ))))
         `(js2-function-param ((t (
             :foreground ,tx-3rd
-            :slant normal
-            :weight normal
         ))))
         `(js2-function-call ((t (
             :foreground ,tx-4th
-            :slant normal
             :weight bold
         ))))
         `(js2-jsdoc-tag ((t (
@@ -501,7 +405,6 @@
         ))))
         `(js2-object-property ((t (
             :foreground ,tx-4th
-            :weight normal
         ))))
         `(js2-highlight-vars-second-face ((t (
             :background unspecified
@@ -510,64 +413,49 @@
     ;; Magit & Version Control
         `(magit-diff-added ((t (
             :foreground ,ui-note
-            :slant normal
-            :weight normal
         ))))
         `(magit-diff-added-highlight ((t (
             :foreground ,ui-note
-            :slant normal
             :weight bold
         ))))
         `(magit-diff-removed ((t (
             :foreground ,ui-trsh
-            :slant normal
-            :weight normal
         ))))
         `(magit-diff-removed-highlight ((t (
             :foreground ,ui-trsh
-            :slant normal
             :weight bold
         ))))
         `(magit-diff-context ((t (
             :foreground ,ui-drk4
             :slant italic
-            :weight normal
         ))))
         `(magit-diff-context-highlight ((t (
             :foreground ,ui-drk4
             :slant italic
-            :weight normal
         ))))
         `(magit-section-highlight ((t (
         ))))
         `(magit-branch-local ((t (
             :foreground ,tx-3rd
-            :slant normal
             :weight bold
         ))))
         `(magit-branch-remote ((t (
             :foreground ,tx-1st
-            :slant normal
             :weight bold
         ))))
         `(magit-section-heading ((t (
             :foreground ,tx-5th
-            :slant normal
             :weight bold
         ))))
         `(magit-diff-file-heading ((t (
             :foreground ,ui-drk5
-            :slant normal
             :weight bold
         ))))
         `(magit-diff-hunk-heading ((t (
             :foreground ,tx-7th
-            :slant normal
-            :weight normal
         ))))
         `(magit-diff-hunk-heading-highlight ((t (
             :foreground ,tx-7th
-            :slant normal
             :weight bold
         ))))
         `(magit-branch-current ((t (
@@ -577,18 +465,14 @@
         ))))
         `(magit-diffstat-added ((t (
             :foreground ,ui-note
-            :slant normal
             :weight bold
         ))))
         `(magit-diffstat-removed ((t (
             :foreground ,ui-trsh
-            :slant normal
             :weight bold
         ))))
         `(git-commit-summary ((t (
             :foreground ,tx-7th
-            :slant normal
-            :weight normal
         ))))
     ;; Javascript specific
     )
