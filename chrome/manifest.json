@@ -1,0 +1,37 @@
+{
+    "name": "__MSG_name__",
+    "description": "__MSG_description__",
+    "version": "1.0",
+    "default_locale": "en",
+    "manifest_version": 2,
+    "icons": {
+        "128": "images/icon.png"
+    },
+    "theme": {
+        "colors": {
+            "bookmark_text": [
+                0,
+                0,
+                0
+            ],
+            "button_background": [ 149, 169, 173 ],
+            "tab_background_text": [ 255, 255, 255 ],
+            "tab_text": [ 0, 0, 0 ],
+            "theme_tab_background": [ 74, 91, 95 ],
+            "toolbar": [ 178, 192, 195 ]
+        },
+        "images": {
+            "theme_ntp_background": "images/theme-ntp.png",
+            "theme_tab_background": "images/theme-tab.png",
+            "theme_toolbar": "images/theme-toolbar.png",
+            "theme_frame": "images/theme-frame.png"
+        },
+        "properties": {
+            "ntp_background_alignment": "bottom",
+            "ntp_background_repeat": "no-repeat"
+        },
+        "tints": {
+            "buttons": [ 0, 0, 0 ]
+        }
+    }
+}
