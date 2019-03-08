@@ -12,9 +12,9 @@
             "bookmark_text": [0, 0, 0],
             "tab_text": [0, 0, 0],
             "tab_background_text": [255, 255, 255],
-            "button_background": [173, 168, 149],
-            "theme_tab_background": [95, 91, 74],
-            "toolbar": [195, 192, 178]
+            "button_background": [173, 149, 149],
+            "theme_tab_background": [95, 74, 74],
+            "toolbar": [195, 178, 178]
         },
         "images": {
             "theme_ntp_background": "images/theme-ntp.png",
