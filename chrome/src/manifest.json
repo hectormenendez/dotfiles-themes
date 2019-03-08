@@ -9,16 +9,12 @@
     },
     "theme": {
         "colors": {
-            "bookmark_text": [
-                0,
-                0,
-                0
-            ],
-            "button_background": [ 149, 169, 173 ],
-            "tab_background_text": [ 255, 255, 255 ],
-            "tab_text": [ 0, 0, 0 ],
-            "theme_tab_background": [ 74, 91, 95 ],
-            "toolbar": [ 178, 192, 195 ]
+            "bookmark_text": [0, 0, 0],
+            "button_background": [149, 162, 173],
+            "tab_background_text": [255, 255, 255],
+            "tab_text": [0, 0, 0],
+            "theme_tab_background": [74, 85, 95],
+            "toolbar": [178, 187, 195]
         },
         "images": {
             "theme_ntp_background": "images/theme-ntp.png",
@@ -31,7 +27,7 @@
             "ntp_background_repeat": "no-repeat"
         },
         "tints": {
-            "buttons": [ 0, 0, 0 ]
+            "buttons": [0, 0, 0]
         }
     }
 }
