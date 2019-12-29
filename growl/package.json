@@ -17,7 +17,7 @@
     "gulp": "^3.8.x",
     "html-entities": "^1.1.2",
     "jade": "^1.11.0",
-    "lodash": "^4.15.0",
+    "lodash": "^4.17.13",
     "slugify": "^1.0.2",
     "stylus": "^0.54.5",
     "through2": "^2.0.1"
