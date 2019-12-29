@@ -19,7 +19,7 @@ html
 					h1 %title%
 					p %text%
 		script.
-			(function runme(){
+			let runme = function(){
 				const p = document.getElementsByTagName('p')[0];
 				const h1 = document.getElementsByTagName('h1')[0];
 				// mentions
@@ -47,4 +47,6 @@ html
 					h1.innerHTML = h1.innerHTML
 						.replace(match, [ '<em>', match, '</em>' ].join(''));
 				});
-			})();
+			};
+			runme();
+			runme = null;
